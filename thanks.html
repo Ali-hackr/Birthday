@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inspiration&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="thanks.css" />
+
+    <title>Thank You</title>
+  </head>
+  <body>
+    <main class="main">
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-1.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-2.png" alt="" />
+
+        <h1>Thank You</h1>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-3.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-4.png" alt="" />
+
+        <p>For</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-5.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-6.png" alt="" />
+
+        <p>Showing me love</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-7.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-8.png" alt="" />
+
+        <p>Showing me happiness</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-9.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-10.png" alt="" />
+
+        <p>Showing me kindness</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-11.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-12.png" alt="" />
+
+        <p>Being caring</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-13.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-14.png" alt="" />
+
+        <p>Being perfect</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-15.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-16.png" alt="" />
+
+        <p>Being so gorgeous</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-17.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-18.png" alt="" />
+
+        <p>Being so cute</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-19.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-20.png" alt="" />
+
+        <p>Being so innocent</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-21.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-22.png" alt="" />
+
+        <p>Being so lovable</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-23.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-24.png" alt="" />
+
+        <p>Being exactly what I've always wanted</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-25.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-26.png" alt="" />
+
+        <p>Choosing me</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-27.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-28.png" alt="" />
+
+        <p>Staying with me</p>
+      </section>
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-29.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-30.png" alt="" />
+
+        <p>Your efforts</p>
+      </section>
+
+      <section>
+        <img class="flower-one" src="img/flowers-thanks/flower-31.png" alt="" />
+        <img class="flower-two" src="img/flowers-thanks/flower-32.png" alt="" />
+
+        <p>
+          And for being
+          <a class="yourself" href="love.html">yourself</a>
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const princessMode = urlParams.get("princess-mode") === "true";
+
+      const m = document.querySelector(".main");
+      const yourself = document.querySelector(".yourself");
+
+      if (princessMode) {
+        yourself.href = "love.html?princess-mode=true";
+
+        let interval = setInterval(() => {
+          m.scrollBy({ behavior: "smooth", left: 1 });
+        }, 1500);
+
+        setTimeout(() => {
+          clearInterval(interval);
+
+          setTimeout(() => {
+            yourself.classList.add("yourself-hover");
+          }, 1000);
+
+          setTimeout(() => {
+            yourself.click();
+          }, 3000);
+        }, 23000);
+      }
+    </script>
+  </body>
+</html>

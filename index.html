@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Zeyada&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Happy Birthday</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 800,
+      });
+    </script>
+
+    <div class="checkbox-container">
+      <h1 class="text">Princess Treatment Mode</h1>
+
+      <input type="checkbox" id="dark-mode" class="input" />
+      <label for="dark-mode" class="label toggle">
+        <div class="circle"></div>
+      </label>
+    </div>
+
+    <div class="container">
+      <img
+        data-aos="fade"
+        class="big-flower"
+        src="./img/flowers/flower main.svg"
+        alt="Big Flower"
+      />
+    </div>
+
+    <img
+      data-aos="fade-in"
+      class="flower"
+      src="./img/flowers/flower pink.png"
+      alt="Flower"
+    />
+
+    <img
+      data-aos="slide-left"
+      class="flower-two"
+      src="./img/flowers/flower blue.png"
+      alt="Flower"
+    />
+
+    <main class="new">
+      <section class="section section-one">
+        <div class="section-container-relative">
+          <img
+            class="hello-kitty"
+            src="./img/hello kitty flowers.svg"
+            alt="Hello Kitty Flowers"
+          />
+
+          <h1 class="section-text text">Happy Birthday!!</h1>
+          <img class="flowers-two" src="./img/flowers two.svg" alt="Flowers" />
+        </div>
+      </section>
+
+      <section class="section section-two">
+        <h1>To</h1>
+      </section>
+
+      <section class="section section-three">
+        <div class="section-container-relative">
+          <h1>
+            The girl who looks just like
+            <b class="emphasis-blue">a dream</b>
+          </h1>
+
+          <img class="sleeping" src="./img/sleeping.svg" alt="A Dream" />
+        </div>
+      </section>
+
+      <section class="section section-four">
+        <div class="section-container-relative">
+          <h1>Prettier than <b class="emphasis-yellow">the moon</b></h1>
+
+          <img class="moon" src="./img/moon.svg" alt="The Moon" />
+        </div>
+      </section>
+
+      <section class="section section-five">
+        <div class="section-container-relative">
+          <h1>
+            Sweeter than
+            <b class="emphasis-red">a cake</b>
+          </h1>
+
+          <img class="cake" src="./img/cake.svg" alt="Cake" />
+        </div>
+      </section>
+
+      <section class="section section-six">
+        <div class="section-container-relative">
+          <h1>Cuter than <b class="emphasis-bronze">a cat</b></h1>
+
+          <img class="cat" src="./img/cat.svg" alt="A Cat" />
+        </div>
+      </section>
+
+      <section class="section section-seven">
+        <div class="section-container-relative">
+          <h1>Lovelier than <b class="emphasis-pink">flowers</b></h1>
+
+          <img class="flowers" src="./img/flowers bunch 6.svg" alt="Flowers" />
+        </div>
+      </section>
+
+      <section class="section section-eight">
+        <div class="section-container-relative">
+          <h1><b class="emphasis-purple">Perfect</b> in every single way</h1>
+
+          <img class="perfect" src="./img/perfect.svg" alt="Perfect" />
+        </div>
+      </section>
+
+      <section class="section section-nine">
+        <div class="section-container-relative">
+          <a class="heart-link" href="thanks.html"
+            ><img class="heart" src="./img/heart.svg" alt="Heart"
+          /></a>
+
+          <img class="arrow" src="./img/arrow-last.svg" alt="Arrow" />
+
+          <h1 class="text">Click here :3</h1>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const input = document.querySelector(".input");
+      let princessMode = false;
+
+      input.addEventListener("change", (e) => {
+        let interval;
+
+        princessMode = true;
+
+        interval = setInterval(() => {
+          scroll();
+
+          if (zoom >= 44) {
+            clearInterval(interval);
+          }
+        }, 40);
+      });
+
+      const container = document.querySelector(".container");
+      const bigFlower = document.querySelector(".big-flower");
+      const n = document.querySelector(".new");
+
+      let zoom = 1;
+      let scale = 0.4;
+
+      const flower = document.querySelector(".flower");
+      const flowerTwo = document.querySelector(".flower-two");
+
+      const scroll = () => {
+        if (zoom > 20) {
+          scale = 1;
+        }
+
+        bigFlower.style.transform = `scale(${(zoom += scale)})`;
+
+        if (zoom > 1.5) {
+          flower.style.display = "none";
+          flowerTwo.style.display = "none";
+        }
+
+        if (zoom >= 44) {
+          container.style.display = "none";
+          n.style.display = "block";
+
+          const checkboxContainer = document.querySelector(
+            ".checkbox-container"
+          );
+          checkboxContainer.style.display = "none";
+
+          document.removeEventListener("wheel", scroll);
+
+          setTimeout(() => {
+            n.style.backgroundColor = "#EE9BAC";
+          }, 100);
+
+          if (princessMode) {
+            const heartLink = document.querySelector(".heart-link");
+            heartLink.href = "thanks.html?princess-mode=true";
+
+            let interval = setInterval(() => {
+              n.scrollBy({ top: 1, behavior: "smooth" });
+              console.log(n.scrollTop);
+
+              setTimeout(() => {
+                clearInterval(interval);
+
+                const heart = document.querySelector(".heart");
+                heart.classList.add("heart-hovered");
+
+                setTimeout(() => {
+                  heart.click();
+                }, 500);
+              }, 12500);
+            }, 1500);
+          }
+        }
+      };
+      document.addEventListener("wheel", scroll);
+    </script>
+  </body>
+</html>

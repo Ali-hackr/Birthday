@@ -1,0 +1,71 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  height: 100vh;
+  background-color: #5275a9;
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+section {
+  min-width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: "Inspiration", cursive;
+  font-size: 78px;
+  position: relative;
+  text-align: center;
+  padding: 0 18px;
+  box-sizing: border-box;
+}
+.flower-one,
+.flower-two {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 200px;
+  z-index: 99;
+}
+.flower-one {
+  top: 0;
+  left: 0;
+}
+.flower-two {
+  bottom: 0;
+  left: 0;
+}
+
+.main {
+  height: 100vh;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.yourself {
+  text-decoration: none;
+  color: #102950;
+  transition: 0.75s;
+}
+.yourself:hover,
+.yourself-hover {
+  font-size: 98px;
+}
+
+@media (max-width: 480px) {
+  .flower-one,
+  .flower-two {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

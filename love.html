@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="love.css" />
+
+    <title>I Love You</title>
+  </head>
+  <body id="body">
+    <script>
+      const add = () => {
+        for (let i = 0; i < 100; i++) {
+          let h = document.createElement("h1");
+          h.appendChild(document.createTextNode("I love you 💓"));
+
+          document.body.appendChild(h);
+        }
+      };
+
+      add();
+
+      const scroll = () => {
+        if (
+          window.scrollY + window.innerHeight >=
+          document.body.scrollHeight - 500
+        ) {
+          add();
+        }
+      };
+
+      document.addEventListener("wheel", scroll);
+      document.addEventListener("touchmove", scroll);
+      document.addEventListener("scroll", scroll);
+
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const princessMode = urlParams.get("princess-mode") === "true";
+
+      if (princessMode) {
+        setInterval(() => {
+          window.scrollBy({ top: 100, behavior: "smooth" });
+        }, 80);
+      }
+    </script>
+  </body>
+</html>
