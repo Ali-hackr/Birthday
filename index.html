@@ -26,41 +26,41 @@
       });
     </script>
 
-    <div class="checkbox-container">
-      <h1 class="text">Princess Treatment Mode</h1>
-
-      <input type="checkbox" id="dark-mode" class="input" />
-      <label for="dark-mode" class="label toggle">
-        <div class="circle"></div>
-      </label>
-    </div>
-
     <div class="container">
+      <div class="checkbox-container">
+        <h1 class="text">Princess Treatment Mode</h1>
+
+        <div>
+          <label class="switch">
+            <input class="input" type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
       <img
         data-aos="fade"
         class="big-flower"
         src="./img/flowers/flower main.svg"
         alt="Big Flower"
       />
+      <img
+        data-aos="fade-in"
+        class="flower"
+        src="./img/flowers/flower pink.png"
+        alt="Flower"
+      />
+
+      <img
+        data-aos="slide-left"
+        class="flower-two"
+        src="./img/flowers/flower blue.png"
+        alt="Flower"
+      />
     </div>
-
-    <img
-      data-aos="fade-in"
-      class="flower"
-      src="./img/flowers/flower pink.png"
-      alt="Flower"
-    />
-
-    <img
-      data-aos="slide-left"
-      class="flower-two"
-      src="./img/flowers/flower blue.png"
-      alt="Flower"
-    />
 
     <main class="new">
       <section class="section section-one">
-        <div class="section-container-relative">
+        <div class="section-container-relative-one">
           <img
             class="hello-kitty"
             src="./img/hello kitty flowers.svg"
@@ -83,7 +83,11 @@
             <b class="emphasis-blue">a dream</b>
           </h1>
 
-          <img class="sleeping" src="./img/sleeping.svg" alt="A Dream" />
+          <img
+            class="thankful sleeping"
+            src="./img/sleeping.svg"
+            alt="A Dream"
+          />
         </div>
       </section>
 
@@ -91,7 +95,7 @@
         <div class="section-container-relative">
           <h1>Prettier than <b class="emphasis-yellow">the moon</b></h1>
 
-          <img class="moon" src="./img/moon.svg" alt="The Moon" />
+          <img class="thankful moon" src="./img/moon.svg" alt="The Moon" />
         </div>
       </section>
 
@@ -102,7 +106,7 @@
             <b class="emphasis-red">a cake</b>
           </h1>
 
-          <img class="cake" src="./img/cake.svg" alt="Cake" />
+          <img class="thankful cake" src="./img/cake.svg" alt="Cake" />
         </div>
       </section>
 
@@ -110,7 +114,7 @@
         <div class="section-container-relative">
           <h1>Cuter than <b class="emphasis-bronze">a cat</b></h1>
 
-          <img class="cat" src="./img/cat.svg" alt="A Cat" />
+          <img class="thankful cat" src="./img/cat.svg" alt="A Cat" />
         </div>
       </section>
 
@@ -118,7 +122,11 @@
         <div class="section-container-relative">
           <h1>Lovelier than <b class="emphasis-pink">flowers</b></h1>
 
-          <img class="flowers" src="./img/flowers bunch 6.svg" alt="Flowers" />
+          <img
+            class="thankful flowers"
+            src="./img/flowers bunch 6.svg"
+            alt="Flowers"
+          />
         </div>
       </section>
 
@@ -126,7 +134,7 @@
         <div class="section-container-relative">
           <h1><b class="emphasis-purple">Perfect</b> in every single way</h1>
 
-          <img class="perfect" src="./img/perfect.svg" alt="Perfect" />
+          <img class="thankful perfect" src="./img/perfect.svg" alt="Perfect" />
         </div>
       </section>
 
@@ -221,6 +229,8 @@
         }
       };
       document.addEventListener("wheel", scroll);
+      document.addEventListener("touchmove", scroll);
+      document.addEventListener("scroll", scroll);
     </script>
   </body>
 </html>
